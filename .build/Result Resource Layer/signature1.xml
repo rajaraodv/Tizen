@@ -2,9 +2,13 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI="README.md">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</DigestValue>
+</Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>NhnzpWwIP2L8PEiXjlhUVd9Vyp7TyWcKgMrvdZ9kiJ8=</DigestValue>
+<DigestValue>lVwJCBQnRWY4bbQomGO3i2wl7lsKo0YjvrnZDMlsjhg=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -72,7 +76,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>FmAAM6Wp3SILr4o+Ve5IIE8rIHIHich93PoR2LiTgf8=</DigestValue>
+<DigestValue>6qoo662LLDN3XmPTd2N7lq3AVpYfrAkQcQ5IFNrgJ58=</DigestValue>
 </Reference>
 <Reference URI="js/angular.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -92,7 +96,7 @@
 </Reference>
 <Reference URI="js/main.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>6kP2pPghlBwNR/N6KoSgZfmMni0PCaKCuIv+yT8yMco=</DigestValue>
+<DigestValue>ToTMoszTeTO+z9pOCGgdFkQMTep6lzrOZURpi2cGuCg=</DigestValue>
 </Reference>
 <Reference URI="js/moment.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -383,11 +387,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-XnFh9eCLyrUWXseWHzd9yuGseKMLabTIfNwNT1+bNcLQuABNohPRCgo/l50HFrpxptNd98+i0HjK
-bDVAft4nUG32XOXT4VWvNXVNM2uYCLWrxw8w0//tW7+xzJ/5M519DCcQjyI4qxOm1xfQlXPINn5S
-xXL9L34fDa4zKOtqIa3jm8KDB8gyxtITD3ZDTg+st2QtyakXGVPjnm08oSA8kRdEo5ktC+nb5QQE
-jSLNInG/YE5ttISJJYgFdEok5ip7notp5m7ESZIhaHS73w1VMk/sJly7ifQiqB7xcU/U7ni7/i3D
-2QHarXZ0oqIhfV+rUccpRmfFBmdhKKn+CdrnLw==
+BK3Sj6aSclPsAGB/v8q5H6sBvLgMPTrTv86iz+nDUNEi5Rqj0F1wpN/3hHm3Kpt8oF8A7xezxd0w
+BK6S+G/ozdeNva4wnSERTcCJc/sh0+Qr9sge1egZlI7dK/A7SNSO8aPGFNn5KX4pkEH+G2GslWRg
+FjXO8KGREgA+dZ0ZJaczfAedScUDpbnvMO8bgXkA7prm+Trh5NhFBNViJzI6HHVvEtC4cxKT29A2
+X5c62OMhUBWAjBpkVjORlL+UAgh/vE35tzo287Xn2cBLmo7L95qKtpydP2WQgtatvpJIKkExcX28
+Sq0SwZK0xkfyvwzBOzZVgFSLLzqEUIOmilzcvg==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

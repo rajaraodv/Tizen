@@ -36,10 +36,13 @@ var ProviderAppName = "HelloAccessoryProvider";
 var ACTION_FETCH_MEETINGS = "fetch_meetings";
 var ACTION_LOG_A_CALL = "log_a_call";
 
+//store meetings list from Salesforce
+var Salesforce = {meetingsList: []};
+
 function updateMeetings(data) {
 	var jsonData = JSON.parse(data);
 	var len = jsonData.totalSize;
-	var records = jsonData.records;
+	Salesforce.meetingsList = jsonData.records;
 
 	var t1 = $('#meetingsSummary').html();
 	Mustache.parse(t1); // optional, speeds up future uses
@@ -55,9 +58,12 @@ function updateMeetings(data) {
 	Mustache.parse(template); // optional, speeds up future uses
 	for ( var i = 0; i < len; i++) {
 
-		var record = records[i];
+		var record = Salesforce.meetingsList[i];
 		var startTime = moment(record.ActivityDateTime, "YYYY-MM-DDThh (mm) a")
 				.format("hh:mm A");
+		//cache formatted startTime for future use
+		Salesforce.meetingsList[i].formattedStartTime = startTime;
+		
 		var rendered = Mustache.render(template, {
 			startTime : startTime,
 			duration : record.DurationInMinutes,
@@ -69,14 +75,56 @@ function updateMeetings(data) {
 	}
 }
 
-function updateMeetingDetails() {
+function updateMeetingDetails(meetingId) {
+	var attendeesHTML = getMeetingAttendeesHTML(meetingId);
+	console.log("\n\nattendeesHTML\n" + attendeesHTML);
+	var meeting = getMeetingById(meetingId);
 	var template = $('#meetingsDetailsTempl').html();
 	Mustache.parse(template);
 	var rendered = Mustache.render(template, {
-		title : "MEETING TITLE"
+		startTime: meeting.formattedStartTime,
+		title : meeting.Subject,
+		duration: meeting.DurationInMinutes,
+		description: meeting.Description,
+		location: meeting.Location,
+		attendeesHTML: attendeesHTML
 	});
 	$('#meetingDetailsPage').append(rendered);
+	
+}
 
+function getMeetingAttendeesHTML(meetingId) {
+	var html;
+	var meeting = getMeetingById(meetingId);
+	var eventRelations = meeting.EventRelations;
+	
+	var attendees = eventRelations.records;
+	console.log(JSON.stringify(attendees));
+	var len = attendees.length;
+	html = len > 0 ? html = "" : "<p>No Attendees</p>";
+
+	var template = $('#attendeesListTmpl').html();
+	Mustache.parse(template);
+	for(var i = 0; i < len; i++) {
+		var attendee = attendees[i];
+		console.log("attendee.. " + attendee.Relation.Name);
+		html += Mustache.render(template, {Name: attendee.Relation.Name});
+	}
+
+	return html;
+	
+}
+
+
+function getMeetingById(meetingId) {
+	var len = Salesforce.meetingsList.length;
+	for (var i = 0; i < len; i++) {
+		var record = Salesforce.meetingsList[i];
+		if(record.Id == meetingId) {
+			return record;
+		}
+	}
+	return;
 }
 
 function createHTML(log_string) {

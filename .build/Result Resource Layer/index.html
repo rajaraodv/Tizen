@@ -61,60 +61,60 @@
 				sent</div>
 		</div>
 
-		<div class="attendee-height">
+	<div class="attendee-height">
 
 			<div class="noBottomPadding" style="height: 265px;">
 				<div id="m0details" class="meeting-details widthInitial">
-				
+					{{startTime}}
 				</div>
-				<div id="m0tr" class="duration">1 hr</div>
+				<div id="m0tr" class="duration">{{duration}} mins</div>
 				<div id="m0title" class="meeting-title">{{title}}</div>
-				<div id="m0desc" class="meeting-location">1 Market St., San
-					Francisco, CA</div>
-				<div id="m0desc" class="meeting-desc noBottomPadding">New
-					Platform for mobile ad deployment.</div>
+				<div id="m0desc" class="meeting-location">{{location}}</div>
+				<div id="m0desc" class="meeting-desc noBottomPadding">{{description}}</div>
 			</div>
-			<div class="h-divider">
+
+		<div class="h-divider">
 				<hr size="2" noshade color="#F0F1F2" width="320px" />
 			</div>
 			<span class="attendees-title"> Attendees </span>
-
-			<ul data-role="listview" class="attendee-list">
-				<li><a href="valerieprofile.html" data-transition="slideup"><div>
-							<img src="css/images/Valerie_Small_Profile.png" /><span
-								class="attendee-name">Valerie East</span> <img class="key-icon"
-								src="css/images/Key_Icon.png" />
-						</div> </a></li>
-				<li><a href="#"><div>
-							<img src="css/images/Ely_Small_Profile.png" /><span
-								class="attendee-name">Ely Thompson</span>
-						</div></a></li>
-				<li class="noBottomBorder"><a href="#"><div>
-							<img src="css/images/Michelle_Small_Profile.png" /><span
-								class="attendee-name">Michelle Chen</span>
-						</div> </a></li>
+			<ul>
+				
 			</ul>
+			<ul data-role="listview" class="attendee-list">
+				
+			<!-- Notice 3 brackets for raw html injection -->
+			{{{attendeesHTML}}}
+			
+			</ul>
+</div>
 
-		</div>
+	
 </script>
 
+<script id="attendeesListTmpl" type="x-tmpl-mustache">				
+	<li>
+		<a href="valerieprofile.html" data-transition="slideup">
+			<div>
+			<img src="css/images/Valerie_Small_Profile.png" />
+			<span class="attendee-name">{{Name}}</span> 
+			<img class="key-icon" src="css/images/Key_Icon.png" />
+			</div>
+		 </a>
+	</li>
 
+</script>
 <script type="text/javascript" src="lib/tau/js/tau.min.js"></script>
 <!-- load javascript file for your application -->
 
 <script>
-	$(document).on('pagebeforeshow', "#meetingDetailsPage", function(event, data) {
-		var value = $(this).data("url").split("meetingId=")[1];
-		alert(value);
-		 updateMeetingDetails();
+	$(document).on('pagebeforeshow', "#meetingDetailsPage",
+			function(event, data) {
+				var meetingId = $(this).data("url").split("meetingId=")[1];
 
-	});
+				updateMeetingDetails(meetingId);
 
-	//incrementMeetingTime(-1, -30, 'm1details');
-	//setMeetingTime('m2details');
-	//incrementMeetingTime(1, 30, 'm3details');
-	//incrementMeetingTime(3, 0, 'm4details');
-	//var m = false;
+			});
+
 	connect();
 </script>
 
