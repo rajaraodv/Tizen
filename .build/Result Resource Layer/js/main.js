@@ -77,7 +77,6 @@ function updateMeetings(data) {
 
 function updateMeetingDetails(meetingId) {
 	var attendeesHTML = getMeetingAttendeesHTML(meetingId);
-	console.log("\n\nattendeesHTML\n" + attendeesHTML);
 	var meeting = getMeetingById(meetingId);
 	var template = $('#meetingsDetailsTempl').html();
 	Mustache.parse(template);
@@ -99,7 +98,6 @@ function getMeetingAttendeesHTML(meetingId) {
 	var eventRelations = meeting.EventRelations;
 	
 	var attendees = eventRelations.records;
-	console.log(JSON.stringify(attendees));
 	var len = attendees.length;
 	html = len > 0 ? html = "" : "<p>No Attendees</p>";
 
@@ -107,7 +105,6 @@ function getMeetingAttendeesHTML(meetingId) {
 	Mustache.parse(template);
 	for(var i = 0; i < len; i++) {
 		var attendee = attendees[i];
-		console.log("attendee.. " + attendee.Relation.Name);
 		html += Mustache.render(template, {Name: attendee.Relation.Name});
 	}
 
@@ -212,7 +209,6 @@ function disconnect() {
 }
 
 function onreceive(channelId, data) {
-	console.log(data);
 	updateMeetings(data);
 }
 

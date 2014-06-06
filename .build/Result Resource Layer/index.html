@@ -5,11 +5,7 @@
 <link rel="stylesheet" href="lib/tau/themes/default/tau.css">
 <!-- load theme file for your application -->
 <link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/zepto.min.js"></script>
-<script src="js/mustache.min.js"></script>
+
 </head>
 
 <body onload="startTime();loadScreen('main');">
@@ -97,7 +93,7 @@
 			<div>
 			<img src="css/images/Valerie_Small_Profile.png" />
 			<span class="attendee-name">{{Name}}</span> 
-			<img class="key-icon" src="css/images/Key_Icon.png" />
+			
 			</div>
 		 </a>
 	</li>
@@ -105,7 +101,11 @@
 </script>
 <script type="text/javascript" src="lib/tau/js/tau.min.js"></script>
 <!-- load javascript file for your application -->
-
+<script src="js/app.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/mustache.min.js"></script>
 <script>
 	$(document).on('pagebeforeshow', "#meetingDetailsPage",
 			function(event, data) {

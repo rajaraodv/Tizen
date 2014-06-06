@@ -77,7 +77,6 @@ function updateMeetings(data) {
 
 function updateMeetingDetails(meetingId) {
 	var attendeesHTML = getMeetingAttendeesHTML(meetingId);
-	console.log("\n\nattendeesHTML\n" + attendeesHTML);
 	var meeting = getMeetingById(meetingId);
 	var template = $('#meetingsDetailsTempl').html();
 	Mustache.parse(template);
@@ -210,7 +209,6 @@ function disconnect() {
 }
 
 function onreceive(channelId, data) {
-	console.log(data);
 	updateMeetings(data);
 }
 
