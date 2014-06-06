@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/mustache.min.js"></script>
+</head>
+
+<body onload="startTime();loadScreen('main');">
+	<div class="ui-page" id="main">
+		<header class="ui-header" style="width: 320px;">
+			<div class="header-time" style="width: 270px; margin-left: 120px">Salesforce</div>
+		</header>
+
+		<div class="ui-content menu-height" id='meetingsListDiv' />
+	</div>
+
+	<div class="ui-page" id="meetingDetailsPage">
+		<header class="ui-header" style="width: 320px;">
+			<div class="header-time" style="width: 270px; margin-left: 120px">Salesforce</div>
+		</header>
+
+		<div class="ui-content menu-height" id='meetingDetailsPage' />
+	</div>
+
+
+</body>
+<script id='meetingsSummary' type='x-tmpl-mustache'>
+				<div class="card-content content-padding">
+					<div id="msdetails" class="meeting-details noBottomPadding"> You have a total of {{totalMeetings}} {{meetingsText}} Today
+					</div>
+				</div>
+</script>
+<script id="meetingsListItem" type="x-tmpl-mustache">
+	<a id="m3" href="meetingDetailsPage.html?meetingId={{meetingId}}" data-transition="slideup">
+				<div class="card-content content-padding">
+					<div id="m3details" class="meeting-details">{{startTime}}</div>
+					<div id="m3tr" class="duration">{{duration}}mins</div>
+					<div id="m3title" class="meeting-title">{{title}}</div>
+					<div id="m3desc" class="meeting-desc">{{description}}</div>
+				</div>
+			</a>
+</script>
+
+<script id="meetingsDetailsTempl" type="x-tmpl-mustache">
+
+		<header class="ui-header" style="width: 320px;">
+			<div id="currtime" class="header-time"
+				style="width: 270px; margin-left: 120px"></div>
+			<a href="menu.html" data-transition="slideup"
+				class="ui-more ui-icon-overflow" style="width: 50px;"></a>
+		</header>
+		<div id="PopupToast2" class="ui-popup ui-popup-toast">
+			<div class="ui-popup-content" data-transition="slideup">e-mail
+				sent</div>
+		</div>
+
+		<div class="attendee-height">
+
+			<div class="noBottomPadding" style="height: 265px;">
+				<div id="m0details" class="meeting-details widthInitial">
+				
+				</div>
+				<div id="m0tr" class="duration">1 hr</div>
+				<div id="m0title" class="meeting-title">{{title}}</div>
+				<div id="m0desc" class="meeting-location">1 Market St., San
+					Francisco, CA</div>
+				<div id="m0desc" class="meeting-desc noBottomPadding">New
+					Platform for mobile ad deployment.</div>
+			</div>
+			<div class="h-divider">
+				<hr size="2" noshade color="#F0F1F2" width="320px" />
+			</div>
+			<span class="attendees-title"> Attendees </span>
+
+			<ul data-role="listview" class="attendee-list">
+				<li><a href="valerieprofile.html" data-transition="slideup"><div>
+							<img src="css/images/Valerie_Small_Profile.png" /><span
+								class="attendee-name">Valerie East</span> <img class="key-icon"
+								src="css/images/Key_Icon.png" />
+						</div> </a></li>
+				<li><a href="#"><div>
+							<img src="css/images/Ely_Small_Profile.png" /><span
+								class="attendee-name">Ely Thompson</span>
+						</div></a></li>
+				<li class="noBottomBorder"><a href="#"><div>
+							<img src="css/images/Michelle_Small_Profile.png" /><span
+								class="attendee-name">Michelle Chen</span>
+						</div> </a></li>
+			</ul>
+
+		</div>
+</script>
+
+
+<script type="text/javascript" src="lib/tau/js/tau.min.js"></script>
+<!-- load javascript file for your application -->
+
+<script>
+	$(document).on('pagebeforeshow', "#meetingDetailsPage", function(event, data) {
+		var meetingId = $(this).data("url").split("meetingId=")[1];
+
+		 updateMeetingDetails(meetingId);
+
+	});
+
+	connect();
+</script>
+
+<script src="js/lowBatteryCheck.js"></script>
+
+
+</html>

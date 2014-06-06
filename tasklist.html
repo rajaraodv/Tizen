@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="startTime();loadScreen('tasklist');">
+	<div class="ui-page whitebg" id="tasklist">
+		<header class="ui-header" style="width:320px;">
+			<div id="currtime" class="header-time" style="width:270px;margin-left:120px"></div>
+			<a href="menu.html" data-transition="slideup"
+				class="ui-more ui-icon-overflow" style="width:50px;"></a>
+		</header>
+		<div class="ui-content">
+			<div>
+				<ul class="ui-listview">
+					<li style="line-height: 0; min-height: 4rem"><label
+						style="font-size: 28px;"> <input
+							onClick="selectcheckbox('check-1');" type="checkbox"
+							name="radioset" id="check-1" /><script>loadTaskCss('check-1');</script> Send Quadstar presentation for
+							review
+					</label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-2');"
+							name="radioset" id="check-2" /><script>loadTaskCss('check-2');</script> Update Q2 sales projection </label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-3');"
+							name="radioset" id="check-3" /><script>loadTaskCss('check-3');</script> Get roadmap updates for Q3 </label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-4');"
+							name="radioset" id="check-4" /><script>loadTaskCss('check-4');</script> Schedule lunch with the Quadstar
+							team </label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-5');"
+							name="radioset" id="check-5" /><script>loadTaskCss('check-5');</script> Book flight/hotel for
+							Dreamforce'14 </label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-6');"
+							name="radioset" id="check-6" /><script>loadTaskCss('check-6');</script> Plan for marketing summit in San
+							Francisco </label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-7');"
+							name="radioset" id="check-7" /><script>loadTaskCss('check-7');</script> Plan foundation event for team </label></li>
+
+					<li style="line-height: 0; min-height: 4rem; padding-top: 0px;"><label
+						style="font-size: 28px;"><input type="checkbox"  onClick="selectcheckbox('check-8');"
+							name="radioset" id="check-8" /><script>loadTaskCss('check-8');</script> Schedule call with Quadstar CEO
+					</label></li>
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

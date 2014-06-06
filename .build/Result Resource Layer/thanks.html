@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="startTime();">
+	<div class="ui-page whitebg" id="thanks">
+		<header class="ui-header" style="width:320px;">
+			<div id="currtime" class="header-time" style="width:270px;margin-left:120px"></div>
+			<a href="menu.html" data-transition="slideup"
+				class="ui-more ui-icon-overflow" style="width:50px;"></a>
+		</header>
+		<div id="PopupToastThanks" class="ui-popup ui-popup-toast">
+   			<div class="ui-popup-content" style="font-size:24px;" onclick="tau.changePage('oldmeeting.html');">Thanks sent</div>
+		</div>
+		<div class="ui-content">
+				<script>
+				incrementMeetingTime(-1, -30, 'modetails');setDate('tdate');
+				</script>
+				<div class="meeting-desc lightGrey standardPaddingTop standardPaddingBottom"><div id="tdate" style="display:inline-block;"></div> <div id="modetails" style="display:inline-block;"></div></div>
+				<div class="meeting-desc standardPaddingBottom">Thank you for coming to the <span class="meeting-title" style="padding-left:0px;padding-bottom:0px;">Sales Team Meeting</span> this morning! We Appreciate your insight.</div>
+				
+				
+			<div class="ui-grid-col-2"
+				style="height: 76px; position: absolute; bottom: 0; width: 100%;">
+
+				<a href="#" onclick="history.go(-1); return false;" id="btn2" data-transition="slidedown" class="ui-btn">Cancel</a> <a id="btn1" href="#PopupToastThanks" data-rel="popup" class="ui-btn"
+					style="border-left: solid 1px #fff;">Send</a>
+			</div>
+
+		</div>
+	<script>
+( function () {
+	var popup = document.getElementById("PopupToastThanks");
+	
+	   popup.addEventListener("popupcreate", function(ev) 
+	   { setTimeout(function(){tau.changePage('oldmeeting.html');},2000);
+	      
+	   });
+} () );
+</script>
+	</div>
+
+</body>
+
+</html>

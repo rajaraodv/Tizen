@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="startTime();loadScreen('globalmenu');">
+	<div class="ui-page whitebg" id="globalmenu">
+		<header class="ui-header" style="width:320px;">
+			<div id="currtime" class="header-time" style="width:270px;margin-left:120px"></div>
+		</header>
+		<div class="ui-content menu-height fullHeight">
+		<div >
+		<div style="height:90px;">
+			<div id="rlate" style="padding-top:18px;padding-left:18px;" onmouseover="changeColorOnHover('rlate');" onclick="changeColorOnMouseOut('rlate');" onmouseout="changeColorOnMouseOut('rlate');">
+				<a href="late.html" data-transition="slideup" class="menu-items"><div><img
+						src="css/images/Running_Late.png" />
+				<span style="vertical-align:1.5rem;">Running Late</span></div></a>
+			</div>
+		<hr size="2" noshade color="#F0F1F2" width="320px" style="position:relative;top:-10px;"/>
+		</div>
+		
+		<div style="height:90px;">
+			<div id="githanks" style="padding-top:18px;padding-left:18px;" onmouseover="changeColorOnHover('githanks');" onclick="changeColorOnMouseOut('githanks');" onmouseout="changeColorOnMouseOut('githanks');">
+				<a href="givethankstemp.html" data-transition="slideup" class="menu-items"><div><img
+						src="css/images/Give_Thanks.png" />
+				<span style="vertical-align:1.5rem;">Give Thanks</span></div></a>
+			</div>
+		<hr size="2" noshade color="#F0F1F2" width="320px" style="position:relative;top:-10px;"/>
+		</div>
+		
+		<div style="height:90px;">
+			<div id="lcall" style="padding-top:18px;padding-left:18px;" onmouseover="changeColorOnHover('lcall');" onclick="changeColorOnMouseOut('lcall');" onmouseout="changeColorOnMouseOut('lcall');">
+				<a href="logcall.html" data-transition="slideup" class="menu-items"><div><img
+						src="css/images/Log_Call.png" />
+				<span style="vertical-align:1.5rem;">Log Call</span></div></a>
+			</div>
+		</div>
+		
+		</div>
+</div>
+	</div>
+
+
+	<script>
+	
+</script>
+</body>
+
+</html>

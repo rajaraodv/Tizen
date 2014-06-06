@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="startTime();">
+	<div class="ui-page whitebg" id="thankstemp1">
+		<header class="ui-header" style="width:320px;">
+			<div id="currtime" class="header-time" style="width:270px;margin-left:120px"></div>
+			<a href="menu.html" data-transition="slideup"
+				class="ui-more ui-icon-overflow" style="width:50px;"></a>
+		</header>
+		<div id="PopupToastLate1" class="ui-popup ui-popup-toast">
+   			<div class="ui-popup-content" style="font-size:24px;" onclick="tau.changePage('nextmeeting.html');">e-mail sent</div>
+		</div>
+		<div class="ui-content">
+				<div class="meeting-desc standardPaddingTop standardPaddingBottom">Hi everyone,</div>
+				<div class="meeting-desc">I'm sorry, but I'm running 5 minutes late. I'll be there shortly.</div>
+				<div class="meeting-desc standardPaddingBottom">Thank you.</div>
+				<div class="meeting-desc standardPaddingBottom">Jane</div>
+			<div class="ui-grid-col-2"
+				style="height: 76px; position: absolute; bottom: 0; width: 100%;">
+
+				<a href="#" onclick="history.go(-1); return false;" data-transition="slidedown" id="btn2" class="ui-btn">Cancel</a> <a id="btn1" href="#PopupToastLate1" data-rel="popup" class="ui-btn"
+					style="border-left: solid 1px #fff;">Send</a>
+			</div>
+
+		</div>
+	<script>
+( function () {
+	var popup = document.getElementById("PopupToastLate1");
+	
+	   popup.addEventListener("popupcreate", function(ev) 
+	   { setTimeout(function(){tau.changePage('nextmeeting.html');},2000);
+	      
+	   });
+} () );
+</script>
+	</div>
+
+</body>
+
+</html>

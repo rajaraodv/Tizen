@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="startTime();">
+	<div class="ui-page whitebg" id="logcall">
+		<header class="ui-header" style="width:320px;">
+			<div id="currtime" class="header-time" style="width:270px;margin-left:120px"></div>
+			<a href="menu.html" data-transition="slideup"
+				class="ui-more ui-icon-overflow" style="width:50px;"></a>
+		</header>
+		<div id="PopupToastLog" class="ui-popup ui-popup-toast">
+   			<div class="ui-popup-content" style="font-size:24px;" onclick="tau.changePage('oldmeeting.html');">Call logged</div>
+		</div>
+		<div class="ui-content">
+
+				<script>
+				incrementMeetingTime(-1, -30, 'lcdetails');setDate('lcdate');
+				</script>
+				<div class="meeting-desc lightGrey standardPaddingTop standardPaddingBottom"><div id="lcdate" style="display:inline-block;"></div> <div id="lcdetails" style="display:inline-block;"></div></div>
+				<div class="meeting-title standardPaddingBottom">Sales Team Meeting</div>
+				<div class="meeting-desc">Attended by:</div>
+				<div class="meeting-desc standardPaddingBottom">Valerie East, Ely Thompson and Michelle Chen</div>
+				
+			<div class="ui-grid-col-2"
+				style="height: 76px; position: absolute; bottom: 0; width: 100%;">
+
+				<a href="#" onclick="history.go(-1); return false;" class="ui-btn" data-transition="slidedown">Cancel</a> <a href="#PopupToastLog" data-rel="popup" class="ui-btn"
+					style="border-left: solid 1px #fff;">Log</a>
+			</div>
+
+		</div>
+<script>
+( function () {
+	var popup = document.getElementById("PopupToastLog");
+	
+	   popup.addEventListener("popupcreate", function(ev) 
+	   { setTimeout(function(){tau.changePage('oldmeeting.html');},2000);
+	      
+	   });
+} () );
+
+
+
+</script>
+	</div>
+</body>
+
+</html>

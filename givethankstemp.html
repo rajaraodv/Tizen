@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="ui-page whitebg" id="globalmenu">
+		<header class="ui-header">
+			<div class="header-time" style="text-align:center;">Select Recipients</div>
+		</header>
+		<div id="PopupToast" class="ui-popup ui-popup-toast">
+   			<div class="ui-popup-content" onclick="tau.changePage('oldmeeting.html');">thanks sent</div>
+		</div>
+		<div class="ui-content menu-height fullHeight">
+		<div >
+		<div style="height:90px;">
+			<div id="indi" style="padding-top:18px;padding-left:18px;" onmouseover="changeColorOnHover('indi');" onclick="changeColorOnMouseOut('indi');" onmouseout="changeColorOnMouseOut('indi');">
+				<a href="thanks.html" data-transition="slideup" class="menu-items">
+				<div><span style="vertical-align:1.5rem;">Individual</span></div></a>
+			</div>
+		<hr size="2" noshade color="#F0F1F2" width="320px" style="position:relative;top:-15px;"/>
+		</div>
+		
+		<div style="height:90px;">
+			<div id="grp" style="padding-top:18px;padding-left:18px;" onmouseover="changeColorOnHover('grp');" onclick="changeColorOnMouseOut('grp');" onmouseout="changeColorOnMouseOut('grp');">
+				<a href="thanks.html"  data-transition="slideup" class="menu-items">
+				<div><span style="vertical-align:1.5rem;">Group</span></div></a>
+			</div>
+		<hr size="2" noshade color="#F0F1F2" width="320px" style="position:relative;top:-15px;"/>
+		</div>
+		
+		<div style="height:90px;">
+			<div id="aintern" style="padding-top:18px;padding-left:18px;" onmouseover="changeColorOnHover('aintern');" onclick="changeColorOnMouseOut('aintern');" onmouseout="changeColorOnMouseOut('aintern');">
+				<a href="thanks.html" data-transition="slideup" class="menu-items">
+				<div><span style="vertical-align:1.5rem;">All Internal</span></div></a>
+			</div>
+		</div>
+		
+		</div>
+</div>
+	</div>
+</body>
+
+</html>

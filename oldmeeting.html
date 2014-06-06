@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link rel="stylesheet" href="lib/tau/themes/default/tau.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="startTime();loadScreen('nextmeeting');">
+	<div class="ui-page whitebg" id="nextmeeting">
+		<header class="ui-header" style="width:320px;">
+			<div id="currtime" class="header-time" style="width:270px;margin-left:120px"></div>
+			<a href="menu.html" data-transition="slideup"
+				class="ui-more ui-icon-overflow" style="width:50px;"></a>
+		</header>
+
+		<div class="attendee-height">
+
+			<div class="noBottomPadding" style="height:265px;">
+				<div id="m-1details" class="meeting-details widthInitial">
+					<script>
+						incrementMeetingTime(-1, -30, 'm-1details');
+					</script>
+				</div>
+				<div id="m-1tr" class="duration">30 min</div>
+				<div id="m-1title" class="meeting-title">Sales Team Meeting</div>
+				<div id="m-1desc" class="meeting-location">1 Market St., San
+					Francisco, CA</div>
+				<div id="m-1desc" class="meeting-desc noBottomPadding">Discussion around commissions rates for '15.</div>
+			</div>
+			<div class="h-divider">
+				<hr size="2" noshade color="#F0F1F2" width="320px" />
+			</div>
+			<span class="attendees-title"> Attendees </span>
+
+			<ul data-role="listview" class="attendee-list">
+				<li><a href="valerieprofile.html" data-transition='slideup'><div>
+							<img src="css/images/Valerie_Small_Profile.png" /><span
+								class="attendee-name">Valerie East</span> <img class="key-icon"
+								src="css/images/Key_Icon.png" />
+						</div> </a></li>
+				<li><a href="#"><div>
+							<img src="css/images/Ely_Small_Profile.png" /><span
+								class="attendee-name">Ely Thompson</span>
+						</div></a></li>
+				<li class="noBottomBorder"><a href="#"><div>
+							<img src="css/images/Michelle_Small_Profile.png" /><span
+								class="attendee-name">Michelle Chen</span>
+						</div> </a></li>
+			</ul>
+
+		</div>
+
+	</div>
+</body>
+</html>
